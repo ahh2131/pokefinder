@@ -14,6 +14,11 @@
 		A1728BF81D3281920093541E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1728BF61D3281920093541E /* LaunchScreen.storyboard */; };
 		A1728C031D3281920093541E /* PokeFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1728C021D3281920093541E /* PokeFinderTests.swift */; };
 		A1728C0E1D3281920093541E /* PokeFinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1728C0D1D3281920093541E /* PokeFinderUITests.swift */; };
+		A1728C1C1D3284F20093541E /* Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1728C1B1D3284F20093541E /* Monster.swift */; };
+		A1728C1E1D3286440093541E /* VCMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1728C1D1D3286440093541E /* VCMapView.swift */; };
+		A1728C201D328ABF0093541E /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1728C1F1D328ABF0093541E /* JSON.swift */; };
+		A1728C221D328AC40093541E /* PublicArt.json in Resources */ = {isa = PBXBuildFile; fileRef = A1728C211D328AC40093541E /* PublicArt.json */; };
+		A1728C281D32B3F80093541E /* AddMonsterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1728C271D32B3F80093541E /* AddMonsterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,11 @@
 		A1728C091D3281920093541E /* PokeFinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokeFinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1728C0D1D3281920093541E /* PokeFinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeFinderUITests.swift; sourceTree = "<group>"; };
 		A1728C0F1D3281920093541E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1728C1B1D3284F20093541E /* Monster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Monster.swift; path = ../Monster.swift; sourceTree = "<group>"; };
+		A1728C1D1D3286440093541E /* VCMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCMapView.swift; sourceTree = "<group>"; };
+		A1728C1F1D328ABF0093541E /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		A1728C211D328AC40093541E /* PublicArt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PublicArt.json; sourceTree = "<group>"; };
+		A1728C271D32B3F80093541E /* AddMonsterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddMonsterViewController.swift; path = ../AddMonsterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +107,13 @@
 		A1728BEC1D3281920093541E /* PokeFinder */ = {
 			isa = PBXGroup;
 			children = (
+				A1728C271D32B3F80093541E /* AddMonsterViewController.swift */,
+				A1728C211D328AC40093541E /* PublicArt.json */,
+				A1728C1B1D3284F20093541E /* Monster.swift */,
+				A1728C1F1D328ABF0093541E /* JSON.swift */,
 				A1728BED1D3281920093541E /* AppDelegate.swift */,
 				A1728BEF1D3281920093541E /* ViewController.swift */,
+				A1728C1D1D3286440093541E /* VCMapView.swift */,
 				A1728BF11D3281920093541E /* Main.storyboard */,
 				A1728BF41D3281920093541E /* Assets.xcassets */,
 				A1728BF61D3281920093541E /* LaunchScreen.storyboard */,
@@ -232,6 +247,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1728C221D328AC40093541E /* PublicArt.json in Resources */,
 				A1728BF81D3281920093541E /* LaunchScreen.storyboard in Resources */,
 				A1728BF51D3281920093541E /* Assets.xcassets in Resources */,
 				A1728BF31D3281920093541E /* Main.storyboard in Resources */,
@@ -259,8 +275,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1728C1E1D3286440093541E /* VCMapView.swift in Sources */,
+				A1728C201D328ABF0093541E /* JSON.swift in Sources */,
 				A1728BF01D3281920093541E /* ViewController.swift in Sources */,
 				A1728BEE1D3281920093541E /* AppDelegate.swift in Sources */,
+				A1728C1C1D3284F20093541E /* Monster.swift in Sources */,
+				A1728C281D32B3F80093541E /* AddMonsterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

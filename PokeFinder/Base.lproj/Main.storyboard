@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PokeFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,132 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pkS-Yg-7jz">
+                                <rect key="frame" x="1" y="0.0" width="600" height="600"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHA-t5-pWl">
+                                <rect key="frame" x="7" y="533" width="72" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="EeO-Xa-fcR"/>
+                                    <constraint firstAttribute="height" constant="47" id="fbM-iB-58V"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Center">
+                                    <color key="titleColor" red="0.086274509803921567" green="0.30980392156862746" blue="0.47843137254901963" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleCenterButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SIE-uP-M1F"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSR-T8-iTO">
+                                <rect key="frame" x="278" y="542" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="L71-Ed-0n9"/>
+                                    <constraint firstAttribute="width" constant="46" id="vxg-K1-Qci"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="addMonsterButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="64o-kj-AUR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEC-zn-kjq">
+                                <rect key="frame" x="20" y="28" width="53" height="30"/>
+                                <state key="normal" title="Refresh">
+                                    <color key="titleColor" red="0.086274509799999996" green="0.30980392159999998" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="refreshData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cjZ-R0-cqE"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pkS-Yg-7jz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="83D-sQ-tsQ"/>
+                            <constraint firstItem="jSR-T8-iTO" firstAttribute="top" secondItem="pkS-Yg-7jz" secondAttribute="bottom" constant="-58" id="GUE-kw-Z9D"/>
+                            <constraint firstAttribute="trailing" secondItem="pkS-Yg-7jz" secondAttribute="trailing" constant="-1" id="asE-8q-2KF"/>
+                            <constraint firstItem="pkS-Yg-7jz" firstAttribute="leading" secondItem="qHA-t5-pWl" secondAttribute="trailing" constant="-78" id="bN6-Ff-YHI"/>
+                            <constraint firstItem="pkS-Yg-7jz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="1" id="ezt-yU-4lO"/>
+                            <constraint firstItem="qHA-t5-pWl" firstAttribute="top" secondItem="pkS-Yg-7jz" secondAttribute="bottom" constant="-67" id="fie-Tk-wfQ"/>
+                            <constraint firstItem="jSR-T8-iTO" firstAttribute="centerX" secondItem="pkS-Yg-7jz" secondAttribute="centerX" id="gqB-pU-lJd"/>
+                            <constraint firstItem="pkS-Yg-7jz" firstAttribute="top" secondItem="aEC-zn-kjq" secondAttribute="bottom" constant="-58" id="o13-tE-djP"/>
+                            <constraint firstItem="pkS-Yg-7jz" firstAttribute="leading" secondItem="aEC-zn-kjq" secondAttribute="trailing" constant="-72" id="sKG-mp-n3D"/>
+                            <constraint firstItem="pkS-Yg-7jz" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="uJC-uO-DRI"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="pkS-Yg-7jz" id="NOp-2m-uiP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="204" y="316"/>
+        </scene>
+        <!--Add Monster View Controller-->
+        <scene sceneID="o7e-80-Tm6">
+            <objects>
+                <viewController storyboardIdentifier="AddMonsterViewController" id="5Nd-Gz-HEZ" customClass="AddMonsterViewController" customModule="PokeFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HgV-wm-sCT"/>
+                        <viewControllerLayoutGuide type="bottom" id="1hi-yc-Uov"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tp5-N2-EXH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMI-XM-o6U">
+                                <rect key="frame" x="19" y="28" width="48" height="30"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="0.086274509799999996" green="0.30980392159999998" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelAdd:" destination="5Nd-Gz-HEZ" eventType="touchUpInside" id="EIT-3E-lUv"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1IC-tH-Z4S">
+                                <rect key="frame" x="227" y="189" width="146" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="146" id="rKC-lM-WdP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Enter the name of a nearby monster!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcT-rK-cxy">
+                                <rect key="frame" x="180" y="160" width="241" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="279" id="6Ec-HI-WlX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FX4-By-jcu">
+                                <rect key="frame" x="531" y="28" width="49" height="30"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submitMonster:" destination="5Nd-Gz-HEZ" eventType="touchUpInside" id="7Es-Lt-mQW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1IC-tH-Z4S" firstAttribute="centerX" secondItem="tp5-N2-EXH" secondAttribute="centerX" id="5aj-sr-HrH"/>
+                            <constraint firstItem="FX4-By-jcu" firstAttribute="top" secondItem="HgV-wm-sCT" secondAttribute="bottom" constant="8" id="9y5-Ov-aUx"/>
+                            <constraint firstItem="vMI-XM-o6U" firstAttribute="top" secondItem="HgV-wm-sCT" secondAttribute="bottom" constant="8" id="D2P-pc-vO3"/>
+                            <constraint firstItem="vMI-XM-o6U" firstAttribute="leading" secondItem="tp5-N2-EXH" secondAttribute="leadingMargin" constant="-1" id="D9o-4O-N5f"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FX4-By-jcu" secondAttribute="trailing" constant="-2" id="dqb-qO-I5F"/>
+                            <constraint firstItem="1IC-tH-Z4S" firstAttribute="top" secondItem="lcT-rK-cxy" secondAttribute="bottom" constant="8" id="eZE-VT-RU8"/>
+                            <constraint firstItem="lcT-rK-cxy" firstAttribute="leading" secondItem="1IC-tH-Z4S" secondAttribute="leading" constant="-66" id="oOV-V4-Kl8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="monsterName" destination="1IC-tH-Z4S" id="IvV-yE-ktW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JnH-VJ-96v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="866" y="316"/>
         </scene>
     </scenes>
 </document>
