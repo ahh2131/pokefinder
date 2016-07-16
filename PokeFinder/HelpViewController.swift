@@ -10,9 +10,9 @@ import UIKit
 
 protocol SettingsViewControllerDelegate
 {
-    func sendSwitchValue(value: Bool)
+    func sendSwitchValue(value: Bool, type: String)
 }
-
+   
 
 class HelpViewController: UIViewController {
     
@@ -20,10 +20,13 @@ class HelpViewController: UIViewController {
     var delegate:SettingsViewControllerDelegate!
     var switchValue = false
     
+    @IBOutlet weak var ratedSwitch: UISwitch!
+    var ratedSwitchValue = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.switchButton.setOn(self.switchValue, animated: false)
-
+        self.ratedSwitch.setOn(self.ratedSwitchValue, animated: false)
         // Do any additional setup after loading the view.
     }
 
@@ -34,7 +37,10 @@ class HelpViewController: UIViewController {
     
     @IBAction func backButton(sender: AnyObject) {
         self.switchValue = switchButton.on
-        delegate?.sendSwitchValue(self.switchValue)
+        self.ratedSwitchValue = ratedSwitch.on
+        delegate?.sendSwitchValue(self.switchValue, type: "recent")
+        delegate?.sendSwitchValue(self.ratedSwitchValue, type: "rated")
+        
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 

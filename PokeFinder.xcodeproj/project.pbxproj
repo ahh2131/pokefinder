@@ -11,6 +11,12 @@
 		2F83B718C0B13EB4237846C7 /* Pods_PokeFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21B8FBC35A3C6FF92DCE931B /* Pods_PokeFinder.framework */; };
 		A11F288E1D39A14E004C56FC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11F288D1D39A14E004C56FC /* ProfileViewController.swift */; };
 		A12EBB001D39AA1B00EF81B0 /* MonsterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12EBAFF1D39AA1B00EF81B0 /* MonsterViewController.swift */; };
+		A12EBB031D3A461200EF81B0 /* Settings-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A12EBB021D3A461200EF81B0 /* Settings-50.png */; };
+		A12EBB061D3A46C200EF81B0 /* Circled Chevron Down Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A12EBB041D3A46C200EF81B0 /* Circled Chevron Down Filled-50.png */; };
+		A12EBB071D3A46C200EF81B0 /* Circled Chevron Up Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A12EBB051D3A46C200EF81B0 /* Circled Chevron Up Filled-50.png */; };
+		A12EBB091D3A478600EF81B0 /* Replace Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A12EBB081D3A478600EF81B0 /* Replace Filled-50.png */; };
+		A12EBB0B1D3A483700EF81B0 /* Plus Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A12EBB0A1D3A483700EF81B0 /* Plus Filled-50.png */; };
+		A12EBB0D1D3A48C400EF81B0 /* Near Me Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A12EBB0C1D3A48C400EF81B0 /* Near Me Filled-50.png */; };
 		A1728BEE1D3281920093541E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1728BED1D3281920093541E /* AppDelegate.swift */; };
 		A1728BF01D3281920093541E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1728BEF1D3281920093541E /* ViewController.swift */; };
 		A1728BF31D3281920093541E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1728BF11D3281920093541E /* Main.storyboard */; };
@@ -205,6 +211,12 @@
 		8A0E9C8760E8B927DA6722A2 /* Pods-PokeFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokeFinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-PokeFinder/Pods-PokeFinder.release.xcconfig"; sourceTree = "<group>"; };
 		A11F288D1D39A14E004C56FC /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A12EBAFF1D39AA1B00EF81B0 /* MonsterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterViewController.swift; sourceTree = "<group>"; };
+		A12EBB021D3A461200EF81B0 /* Settings-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings-50.png"; sourceTree = "<group>"; };
+		A12EBB041D3A46C200EF81B0 /* Circled Chevron Down Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Circled Chevron Down Filled-50.png"; sourceTree = "<group>"; };
+		A12EBB051D3A46C200EF81B0 /* Circled Chevron Up Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Circled Chevron Up Filled-50.png"; sourceTree = "<group>"; };
+		A12EBB081D3A478600EF81B0 /* Replace Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Replace Filled-50.png"; sourceTree = "<group>"; };
+		A12EBB0A1D3A483700EF81B0 /* Plus Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Plus Filled-50.png"; sourceTree = "<group>"; };
+		A12EBB0C1D3A48C400EF81B0 /* Near Me Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Near Me Filled-50.png"; sourceTree = "<group>"; };
 		A1728BEA1D3281920093541E /* PokeFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1728BED1D3281920093541E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1728BEF1D3281920093541E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -432,6 +444,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A12EBB011D3A460500EF81B0 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				A12EBB0C1D3A48C400EF81B0 /* Near Me Filled-50.png */,
+				A12EBB0A1D3A483700EF81B0 /* Plus Filled-50.png */,
+				A12EBB081D3A478600EF81B0 /* Replace Filled-50.png */,
+				A12EBB021D3A461200EF81B0 /* Settings-50.png */,
+				A12EBB041D3A46C200EF81B0 /* Circled Chevron Down Filled-50.png */,
+				A12EBB051D3A46C200EF81B0 /* Circled Chevron Up Filled-50.png */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
 		A1728BE11D3281920093541E = {
 			isa = PBXGroup;
 			children = (
@@ -457,6 +482,7 @@
 		A1728BEC1D3281920093541E /* PokeFinder */ = {
 			isa = PBXGroup;
 			children = (
+				A12EBB011D3A460500EF81B0 /* Assets */,
 				A1728C291D34309B0093541E /* Images */,
 				A1728C271D32B3F80093541E /* AddMonsterViewController.swift */,
 				A1728C211D328AC40093541E /* PublicArt.json */,
@@ -784,6 +810,7 @@
 				A1728D4E1D3430C10093541E /* 143.png in Resources */,
 				A1728D211D3430C10093541E /* 98.png in Resources */,
 				A1728CF51D3430C10093541E /* 54.png in Resources */,
+				A12EBB091D3A478600EF81B0 /* Replace Filled-50.png in Resources */,
 				A1728D521D3430C10093541E /* 147.png in Resources */,
 				A1728CD01D3430C10093541E /* 17.png in Resources */,
 				A1728D4B1D3430C10093541E /* 140.png in Resources */,
@@ -805,6 +832,7 @@
 				A1728CDB1D3430C10093541E /* 28.png in Resources */,
 				A1728CD31D3430C10093541E /* 20.png in Resources */,
 				A1728CFA1D3430C10093541E /* 59.png in Resources */,
+				A12EBB031D3A461200EF81B0 /* Settings-50.png in Resources */,
 				A1728D401D3430C10093541E /* 129.png in Resources */,
 				A1728CC61D3430C10093541E /* 7.png in Resources */,
 				A1728CD21D3430C10093541E /* 19.png in Resources */,
@@ -823,6 +851,7 @@
 				A1728C221D328AC40093541E /* PublicArt.json in Resources */,
 				A1728CE31D3430C10093541E /* 36.png in Resources */,
 				A1728CF81D3430C10093541E /* 57.png in Resources */,
+				A12EBB071D3A46C200EF81B0 /* Circled Chevron Up Filled-50.png in Resources */,
 				A1728CE91D3430C10093541E /* 42.png in Resources */,
 				A1728D261D3430C10093541E /* 103.png in Resources */,
 				A1728CEA1D3430C10093541E /* 43.png in Resources */,
@@ -833,6 +862,7 @@
 				A1728CDE1D3430C10093541E /* 31.png in Resources */,
 				A1728D181D3430C10093541E /* 89.png in Resources */,
 				A1728D381D3430C10093541E /* 121.png in Resources */,
+				A12EBB0D1D3A48C400EF81B0 /* Near Me Filled-50.png in Resources */,
 				A1728D4A1D3430C10093541E /* 139.png in Resources */,
 				A1728BF81D3281920093541E /* LaunchScreen.storyboard in Resources */,
 				A1728BF51D3281920093541E /* Assets.xcassets in Resources */,
@@ -904,6 +934,7 @@
 				A1728D241D3430C10093541E /* 101.png in Resources */,
 				A1728D321D3430C10093541E /* 115.png in Resources */,
 				A1728CDC1D3430C10093541E /* 29.png in Resources */,
+				A12EBB0B1D3A483700EF81B0 /* Plus Filled-50.png in Resources */,
 				A1728D3E1D3430C10093541E /* 127.png in Resources */,
 				A1728D0B1D3430C10093541E /* 76.png in Resources */,
 				A1728CFF1D3430C10093541E /* 64.png in Resources */,
@@ -916,6 +947,7 @@
 				A1728D061D3430C10093541E /* 71.png in Resources */,
 				A1728D0C1D3430C10093541E /* 77.png in Resources */,
 				A1728D251D3430C10093541E /* 102.png in Resources */,
+				A12EBB061D3A46C200EF81B0 /* Circled Chevron Down Filled-50.png in Resources */,
 				A1728CC21D3430C10093541E /* 3.png in Resources */,
 				A1728D421D3430C10093541E /* 131.png in Resources */,
 				A1728D231D3430C10093541E /* 100.png in Resources */,

@@ -21,7 +21,9 @@ class ViewController: UIViewController, ModalViewControllerDelegate, CLLocationM
     let regionRadius: CLLocationDistance = 1000
     var initialLocation = false
     var switchValue = false
+    var ratedSwitchValue = false
     var uuid = String()
+    var name = String()
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -51,6 +53,7 @@ class ViewController: UIViewController, ModalViewControllerDelegate, CLLocationM
                 let modalVC : AddMonsterViewController = self.storyboard!.instantiateViewControllerWithIdentifier("AddMonsterViewController") as! AddMonsterViewController
                 modalVC.search = true
                 modalVC.delegate=self
+                modalVC.monsterHeaderText="Looking for a monster?"
                 modalVC.submitButtonText = "Search"
                 self.presentViewController(modalVC, animated: true, completion: nil)
             } else {
@@ -62,18 +65,21 @@ class ViewController: UIViewController, ModalViewControllerDelegate, CLLocationM
     
     func searchMonster(name: String) {
         if (!name.isEmpty) {
-            Alamofire.request(.GET, "https://pacific-woodland-75576.herokuapp.com/search/\(name)?lat=\(self.currentLocation.coordinate.latitude)&lng=\(self.currentLocation.coordinate.longitude)&recent=\(self.switchValue)")
+            Alamofire.request(.GET, "https://\(Constants.baseUrl).herokuapp.com/search/\(name)?lat=\(self.currentLocation.coordinate.latitude)&lng=\(self.currentLocation.coordinate.longitude)&recent=\(self.switchValue)")
                 .response { request, response, data, error in
                     self.searchedMonster = []
                     var json = JSON(data: data!)
                     for (key,subJson):(String, JSON) in json {
                         //Do something you want
-                        let monster = Monster(title: subJson["name"].string!,
+                        let monster = Monster(id: Int(String(subJson["id"]))!,title: subJson["name"].string!,
                             locationName: "",
                             discipline: "",
                             //coordinate: self.currentLocation.coordinate)
                             coordinate: CLLocationCoordinate2DMake(Double(subJson["lat"].string!)!, Double(subJson["lng"].string!)!),
-                            imageName: String(subJson["number"])+".png")
+                            imageName: String(subJson["number"])+".png",
+                            spotterName: subJson["spotterName"].string!,
+                            upVotes: Int(String(subJson["upVotes"]))!,
+                            downVotes: Int(String(subJson["downVotes"]))!)
                         self.searchedMonster.append(monster)
                     }
                     self.mapView.removeAnnotations(self.mapView.annotations)
@@ -92,11 +98,15 @@ class ViewController: UIViewController, ModalViewControllerDelegate, CLLocationM
             
         } else {
             centerMapOnLocation(self.currentLocation)
-            let monster = Monster(title: value,
+            let monster = Monster(id: getPokemonNumber(value),
+                                  title: value,
                                   locationName: "",
                                   discipline: "",
                                   coordinate: self.currentLocation.coordinate,
-                                  imageName: (getPokemonNumber(value).description) + ".png")
+                                  imageName: (getPokemonNumber(value).description) + ".png",
+                                  spotterName: "",
+                                  upVotes: 0,
+                                  downVotes: 0)
             mapView.addAnnotation(monster)
             // make api call to tell server to add a pin
             let parameters = [
@@ -107,7 +117,7 @@ class ViewController: UIViewController, ModalViewControllerDelegate, CLLocationM
                 ],
                 "uuid": self.uuid
             ]
-            Alamofire.request(.POST, "https://pacific-woodland-75576.herokuapp.com/monsters", parameters: parameters as! [String : AnyObject])
+            Alamofire.request(.POST, "https://\(Constants.baseUrl).herokuapp.com/monsters", parameters: parameters as! [String : AnyObject])
             
             //getMonsters(true)
         }
@@ -139,6 +149,7 @@ class ViewController: UIViewController, ModalViewControllerDelegate, CLLocationM
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         checkLocationAuthorizationStatus()
+        showNameAlert()
     }
     
     func centerMapOnLocation(location: CLLocation) {
@@ -158,7 +169,36 @@ class ViewController: UIViewController, ModalViewControllerDelegate, CLLocationM
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
+        showNameAlert()
 
+    }
+    
+    func showNameAlert() {
+        let prefs = NSUserDefaults.standardUserDefaults()
+        if let name = prefs.stringForKey("name"){
+            self.name = name
+        }else{
+            var inputTextField: UITextField?
+            let passwordPrompt = UIAlertController(title: "Welcome to PokeFinder", message: "Please enter your Pokemon GO username so we can get started.", preferredStyle: UIAlertControllerStyle.Alert)
+            passwordPrompt.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+                // Now do whatever you want with inputTextField (remember to unwrap the optional)
+                if (inputTextField?.text == "" || inputTextField?.text!.characters.count > 16) {
+                    self.showNameAlert()
+                } else {
+                    self.name = (inputTextField?.text)!
+                    prefs.setValue(self.name, forKey: "name")
+                    Alamofire.request(.POST, "https://\(Constants.baseUrl).herokuapp.com/users", parameters: ["user": ["name": self.name, "uuid": self.uuid]])
+                }
+            }))
+            passwordPrompt.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
+                textField.placeholder = "Name"
+                textField.secureTextEntry = false
+                inputTextField = textField
+            })
+            
+            presentViewController(passwordPrompt, animated: true, completion: nil)
+
+        }
     }
     
     func dismissKeyboard() {
@@ -169,12 +209,18 @@ class ViewController: UIViewController, ModalViewControllerDelegate, CLLocationM
     @IBAction func settingsButton(sender: AnyObject) {
         let modalVC : HelpViewController = self.storyboard!.instantiateViewControllerWithIdentifier("HelpViewController") as! HelpViewController
         modalVC.switchValue = self.switchValue
+        modalVC.ratedSwitchValue = self.ratedSwitchValue
         modalVC.delegate=self;
         self.presentViewController(modalVC, animated: true, completion: nil)
     }
     
-    func sendSwitchValue(value: Bool) {
-        self.switchValue = value
+    func sendSwitchValue(value: Bool, type: String) {
+        if type == "recent" {
+            self.switchValue = value
+        } else {
+            self.ratedSwitchValue = value
+        }
+        
         getMonsters(true)
     }
     
@@ -183,6 +229,7 @@ class ViewController: UIViewController, ModalViewControllerDelegate, CLLocationM
 
         modalVC.delegate=self;
         modalVC.submitButtonText = "Add"
+        modalVC.monsterHeaderText = "Found a monster? Add it!"
 
         self.presentViewController(modalVC, animated: true, completion: nil)
     }
@@ -209,17 +256,21 @@ class ViewController: UIViewController, ModalViewControllerDelegate, CLLocationM
     
     func getMonsters(reload: Bool) {
         if (reload || self.Monsters.count == 0) {
-            Alamofire.request(.GET, "https://pacific-woodland-75576.herokuapp.com", parameters: ["lat": self.currentLocation.coordinate.latitude, "lng": self.currentLocation.coordinate.longitude, "recent": self.switchValue.description, "uuid": self.uuid])
+            NSLog(Constants.baseUrl);
+            Alamofire.request(.GET, "https://\(Constants.baseUrl).herokuapp.com", parameters: ["lat": self.currentLocation.coordinate.latitude, "lng": self.currentLocation.coordinate.longitude, "recent": self.switchValue.description, "uuid": self.uuid, "rated": self.ratedSwitchValue])
                 .response { request, response, data, error in
                     var json = JSON(data: data!)
                     for (key,subJson):(String, JSON) in json {
                         //Do something you want
-                        let monster = Monster(title: subJson["name"].string!,
+                        let monster = Monster(id: subJson["id"].intValue,title: subJson["name"].string!,
                             locationName: "",
                             discipline: "",
                             //coordinate: self.currentLocation.coordinate)
                             coordinate: CLLocationCoordinate2DMake(Double(subJson["lat"].string!)!, Double(subJson["lng"].string!)!),
-                            imageName: String(subJson["number"])+".png")
+                            imageName: String(subJson["number"])+".png",
+                            spotterName: subJson["spotterName"].string!,
+                            upVotes: subJson["upVotes"].intValue,
+                            downVotes: subJson["downVotes"].intValue)
                         if (self.switchValue) {
                             self.recentMonsters.append(monster)
                         } else {

@@ -162,5 +162,7 @@ struct Constants {
         "Mew"
     ]
     static let orderedMonsters = monsters.sort { $0 < $1 }
-
+    static let developmentUrl = "rocky-peak-54848"
+    static let productionUrl = "pacific-woodland-75576"
+    static let baseUrl = developmentUrl
 }

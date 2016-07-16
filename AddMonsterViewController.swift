@@ -22,6 +22,8 @@ class AddMonsterViewController: UIViewController, UIPickerViewDelegate, UIPicker
     var search = false
     @IBOutlet weak var submitButton: UIButton!
     var submitButtonText: String!
+    @IBOutlet weak var monsterHeader: UILabel!
+    var monsterHeaderText: String!
     
     @IBAction func cancelAdd(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: {});
@@ -30,6 +32,7 @@ class AddMonsterViewController: UIViewController, UIPickerViewDelegate, UIPicker
     override func viewDidLoad() {
         super.viewDidLoad()
         self.submitButton.setTitle(submitButtonText, forState: .Normal)
+        self.monsterHeader.text = self.monsterHeaderText
         // Do any additional setup after loading the view.
     }
 
