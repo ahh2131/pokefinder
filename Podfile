@@ -6,6 +6,7 @@ target 'PokeFinder' do
   use_frameworks!
   pod 'Alamofire', '~> 3.4'
   pod 'SwiftyJSON'
+  pod 'HanekeSwift'
 
 
 

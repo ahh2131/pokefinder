@@ -165,4 +165,5 @@ struct Constants {
     static let developmentUrl = "rocky-peak-54848"
     static let productionUrl = "pacific-woodland-75576"
     static let baseUrl = developmentUrl
+    static let version = "2"
 }

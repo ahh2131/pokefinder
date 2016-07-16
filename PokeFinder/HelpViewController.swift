@@ -12,7 +12,7 @@ protocol SettingsViewControllerDelegate
 {
     func sendSwitchValue(value: Bool, type: String)
 }
-   
+
 
 class HelpViewController: UIViewController {
     

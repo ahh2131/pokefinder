@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4D350CB98E1DE8B405A7F61AFBD74D17"
-               BuildableName = "Pods_PokeFinder.framework"
-               BlueprintName = "Pods-PokeFinder"
+               BlueprintIdentifier = "2C2B1953A91633859BF7AD238FF567A0"
+               BuildableName = "Haneke.framework"
+               BlueprintName = "HanekeSwift"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4D350CB98E1DE8B405A7F61AFBD74D17"
-            BuildableName = "Pods_PokeFinder.framework"
-            BlueprintName = "Pods-PokeFinder"
+            BlueprintIdentifier = "2C2B1953A91633859BF7AD238FF567A0"
+            BuildableName = "Haneke.framework"
+            BlueprintName = "HanekeSwift"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

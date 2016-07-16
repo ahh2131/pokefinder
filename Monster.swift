@@ -10,10 +10,11 @@ class Monster: NSObject, MKAnnotation {
     let spotterName: String
     var upVotes: Int
     var downVotes: Int
+    var totalVotes: Int
     let id: Int
     var voted: Bool
     
-    init(id: Int, title: String, locationName: String, discipline: String, coordinate: CLLocationCoordinate2D, imageName: String, spotterName: String, upVotes: Int, downVotes: Int) {
+    init(id: Int, title: String, locationName: String, discipline: String, coordinate: CLLocationCoordinate2D, imageName: String, spotterName: String, upVotes: Int, downVotes: Int, totalVotes: Int) {
         self.id = id
         self.title = title
         self.locationName = locationName
@@ -23,6 +24,7 @@ class Monster: NSObject, MKAnnotation {
         self.spotterName = spotterName
         self.upVotes = upVotes
         self.downVotes = downVotes
+        self.totalVotes = totalVotes
         self.voted = false
         super.init()
     }
@@ -47,7 +49,8 @@ class Monster: NSObject, MKAnnotation {
         // 3
         return Monster(id: 1, title: title, locationName: locationName!, discipline: discipline!, coordinate: coordinate, imageName: "", spotterName: "",
                        upVotes: 0,
-                       downVotes: 0)
+                       downVotes: 0,
+                       totalVotes: 0)
     }
     
     var subtitle: String? {

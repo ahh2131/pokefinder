@@ -65,7 +65,7 @@ class ViewController: UIViewController, ModalViewControllerDelegate, CLLocationM
     
     func searchMonster(name: String) {
         if (!name.isEmpty) {
-            Alamofire.request(.GET, "https://\(Constants.baseUrl).herokuapp.com/search/\(name)?lat=\(self.currentLocation.coordinate.latitude)&lng=\(self.currentLocation.coordinate.longitude)&recent=\(self.switchValue)")
+            Alamofire.request(.GET, "https://\(Constants.baseUrl).herokuapp.com/search/\(name)?lat=\(self.currentLocation.coordinate.latitude)&lng=\(self.currentLocation.coordinate.longitude)&recent=\(self.switchValue)&version=\(Constants.version)")
                 .response { request, response, data, error in
                     self.searchedMonster = []
                     var json = JSON(data: data!)
@@ -79,7 +79,8 @@ class ViewController: UIViewController, ModalViewControllerDelegate, CLLocationM
                             imageName: String(subJson["number"])+".png",
                             spotterName: subJson["spotterName"].string!,
                             upVotes: Int(String(subJson["upVotes"]))!,
-                            downVotes: Int(String(subJson["downVotes"]))!)
+                            downVotes: Int(String(subJson["downVotes"]))!,
+                            totalVotes: Int(String(subJson["totalVotes"]))!)
                         self.searchedMonster.append(monster)
                     }
                     self.mapView.removeAnnotations(self.mapView.annotations)
@@ -106,7 +107,8 @@ class ViewController: UIViewController, ModalViewControllerDelegate, CLLocationM
                                   imageName: (getPokemonNumber(value).description) + ".png",
                                   spotterName: "",
                                   upVotes: 0,
-                                  downVotes: 0)
+                                  downVotes: 0,
+                                  totalVotes: 0)
             mapView.addAnnotation(monster)
             // make api call to tell server to add a pin
             let parameters = [
@@ -115,7 +117,8 @@ class ViewController: UIViewController, ModalViewControllerDelegate, CLLocationM
                     "lat": self.currentLocation.coordinate.latitude,
                     "lng": self.currentLocation.coordinate.longitude
                 ],
-                "uuid": self.uuid
+                "uuid": self.uuid,
+                "version": Constants.version
             ]
             Alamofire.request(.POST, "https://\(Constants.baseUrl).herokuapp.com/monsters", parameters: parameters as! [String : AnyObject])
             
@@ -187,7 +190,7 @@ class ViewController: UIViewController, ModalViewControllerDelegate, CLLocationM
                 } else {
                     self.name = (inputTextField?.text)!
                     prefs.setValue(self.name, forKey: "name")
-                    Alamofire.request(.POST, "https://\(Constants.baseUrl).herokuapp.com/users", parameters: ["user": ["name": self.name, "uuid": self.uuid]])
+                    Alamofire.request(.POST, "https://\(Constants.baseUrl).herokuapp.com/users", parameters: ["user": ["name": self.name, "uuid": self.uuid], "version": Constants.version])
                 }
             }))
             passwordPrompt.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
@@ -257,7 +260,7 @@ class ViewController: UIViewController, ModalViewControllerDelegate, CLLocationM
     func getMonsters(reload: Bool) {
         if (reload || self.Monsters.count == 0) {
             NSLog(Constants.baseUrl);
-            Alamofire.request(.GET, "https://\(Constants.baseUrl).herokuapp.com", parameters: ["lat": self.currentLocation.coordinate.latitude, "lng": self.currentLocation.coordinate.longitude, "recent": self.switchValue.description, "uuid": self.uuid, "rated": self.ratedSwitchValue])
+            Alamofire.request(.GET, "https://\(Constants.baseUrl).herokuapp.com", parameters: ["lat": self.currentLocation.coordinate.latitude, "lng": self.currentLocation.coordinate.longitude, "recent": self.switchValue.description, "uuid": self.uuid, "rated": self.ratedSwitchValue, "version": Constants.version])
                 .response { request, response, data, error in
                     var json = JSON(data: data!)
                     for (key,subJson):(String, JSON) in json {
@@ -270,7 +273,8 @@ class ViewController: UIViewController, ModalViewControllerDelegate, CLLocationM
                             imageName: String(subJson["number"])+".png",
                             spotterName: subJson["spotterName"].string!,
                             upVotes: subJson["upVotes"].intValue,
-                            downVotes: subJson["downVotes"].intValue)
+                            downVotes: subJson["downVotes"].intValue,
+                            totalVotes: subJson["totalVotes"].intValue)
                         if (self.switchValue) {
                             self.recentMonsters.append(monster)
                         } else {

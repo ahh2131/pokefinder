@@ -87,7 +87,7 @@ class MonsterViewController: UIViewController, MKMapViewDelegate {
     }
     
     func sendVote(vote: String) {
-        Alamofire.request(.POST, "https://\(Constants.baseUrl).herokuapp.com/vote", parameters: ["uuid": UIDevice.currentDevice().identifierForVendor!.UUIDString, "monster_id": self.monsterId, "vote": vote])
+        Alamofire.request(.POST, "https://\(Constants.baseUrl).herokuapp.com/vote", parameters: ["uuid": UIDevice.currentDevice().identifierForVendor!.UUIDString, "monster_id": self.monsterId, "vote": vote, "version": Constants.version])
                 
     }
     

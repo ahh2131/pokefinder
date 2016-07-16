@@ -17,6 +17,8 @@
 		A12EBB091D3A478600EF81B0 /* Replace Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A12EBB081D3A478600EF81B0 /* Replace Filled-50.png */; };
 		A12EBB0B1D3A483700EF81B0 /* Plus Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A12EBB0A1D3A483700EF81B0 /* Plus Filled-50.png */; };
 		A12EBB0D1D3A48C400EF81B0 /* Near Me Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A12EBB0C1D3A48C400EF81B0 /* Near Me Filled-50.png */; };
+		A12EBB0F1D3AB63000EF81B0 /* Circled User Female -50.png in Resources */ = {isa = PBXBuildFile; fileRef = A12EBB0E1D3AB63000EF81B0 /* Circled User Female -50.png */; };
+		A12EBB131D3ABA7D00EF81B0 /* MonsterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12EBB121D3ABA7D00EF81B0 /* MonsterTableViewCell.swift */; };
 		A1728BEE1D3281920093541E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1728BED1D3281920093541E /* AppDelegate.swift */; };
 		A1728BF01D3281920093541E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1728BEF1D3281920093541E /* ViewController.swift */; };
 		A1728BF31D3281920093541E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1728BF11D3281920093541E /* Main.storyboard */; };
@@ -217,6 +219,8 @@
 		A12EBB081D3A478600EF81B0 /* Replace Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Replace Filled-50.png"; sourceTree = "<group>"; };
 		A12EBB0A1D3A483700EF81B0 /* Plus Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Plus Filled-50.png"; sourceTree = "<group>"; };
 		A12EBB0C1D3A48C400EF81B0 /* Near Me Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Near Me Filled-50.png"; sourceTree = "<group>"; };
+		A12EBB0E1D3AB63000EF81B0 /* Circled User Female -50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Circled User Female -50.png"; sourceTree = "<group>"; };
+		A12EBB121D3ABA7D00EF81B0 /* MonsterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterTableViewCell.swift; sourceTree = "<group>"; };
 		A1728BEA1D3281920093541E /* PokeFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1728BED1D3281920093541E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1728BEF1D3281920093541E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -447,6 +451,7 @@
 		A12EBB011D3A460500EF81B0 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				A12EBB0E1D3AB63000EF81B0 /* Circled User Female -50.png */,
 				A12EBB0C1D3A48C400EF81B0 /* Near Me Filled-50.png */,
 				A12EBB0A1D3A483700EF81B0 /* Plus Filled-50.png */,
 				A12EBB081D3A478600EF81B0 /* Replace Filled-50.png */,
@@ -499,6 +504,7 @@
 				A1728BF41D3281920093541E /* Assets.xcassets */,
 				A1728BF61D3281920093541E /* LaunchScreen.storyboard */,
 				A1728BF91D3281920093541E /* Info.plist */,
+				A12EBB121D3ABA7D00EF81B0 /* MonsterTableViewCell.swift */,
 			);
 			path = PokeFinder;
 			sourceTree = "<group>";
@@ -947,6 +953,7 @@
 				A1728D061D3430C10093541E /* 71.png in Resources */,
 				A1728D0C1D3430C10093541E /* 77.png in Resources */,
 				A1728D251D3430C10093541E /* 102.png in Resources */,
+				A12EBB0F1D3AB63000EF81B0 /* Circled User Female -50.png in Resources */,
 				A12EBB061D3A46C200EF81B0 /* Circled Chevron Down Filled-50.png in Resources */,
 				A1728CC21D3430C10093541E /* 3.png in Resources */,
 				A1728D421D3430C10093541E /* 131.png in Resources */,
@@ -1102,6 +1109,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A12EBB131D3ABA7D00EF81B0 /* MonsterTableViewCell.swift in Sources */,
 				A1728D591D3453970093541E /* HelpViewController.swift in Sources */,
 				A1728C1E1D3286440093541E /* VCMapView.swift in Sources */,
 				A1728C201D328ABF0093541E /* JSON.swift in Sources */,
