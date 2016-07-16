@@ -10,21 +10,26 @@ import UIKit
 
 protocol ModalViewControllerDelegate
 {
-    func sendValue(var value : String)
+    func sendValue(var value : String, search: Bool)
 }
 
-class AddMonsterViewController: UIViewController {
+class AddMonsterViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var monsterName: UITextField!
     var delegate:ModalViewControllerDelegate!
-
+    var chosenMonster = String()
+    @IBOutlet weak var monsterPicker: UIPickerView!
+    var search = false
+    @IBOutlet weak var submitButton: UIButton!
+    var submitButtonText: String!
+    
     @IBAction func cancelAdd(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: {});
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.submitButton.setTitle(submitButtonText, forState: .Normal)
         // Do any additional setup after loading the view.
     }
 
@@ -34,11 +39,29 @@ class AddMonsterViewController: UIViewController {
     }
     
     @IBAction func submitMonster(sender: AnyObject) {
-        delegate?.sendValue(self.monsterName.text!)
-        NSLog(self.monsterName.text!)
+        // TODO: is there a better way here? If empty, it's because they are tagging first value in the picker.
+        if self.chosenMonster.isEmpty {
+            self.chosenMonster = Constants.orderedMonsters[0]
+        }
+        delegate?.sendValue(self.chosenMonster, search: self.search)
         self.dismissViewControllerAnimated(true, completion: {})
     }
     
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return Constants.orderedMonsters.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        return Constants.orderedMonsters[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.chosenMonster = Constants.orderedMonsters[row]
+    }
 
     /*
     // MARK: - Navigation

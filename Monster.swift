@@ -6,13 +6,14 @@ class Monster: NSObject, MKAnnotation {
     let locationName: String
     let discipline: String
     let coordinate: CLLocationCoordinate2D
+    let imageName: String
     
-    init(title: String, locationName: String, discipline: String, coordinate: CLLocationCoordinate2D) {
+    init(title: String, locationName: String, discipline: String, coordinate: CLLocationCoordinate2D, imageName: String) {
         self.title = title
         self.locationName = locationName
         self.discipline = discipline
         self.coordinate = coordinate
-        
+        self.imageName = imageName
         super.init()
     }
     
@@ -30,10 +31,11 @@ class Monster: NSObject, MKAnnotation {
         // 2
         let latitude = (json[18].string! as NSString).doubleValue
         let longitude = (json[19].string! as NSString).doubleValue
+
         let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         
         // 3
-        return Monster(title: title, locationName: locationName!, discipline: discipline!, coordinate: coordinate)
+        return Monster(title: title, locationName: locationName!, discipline: discipline!, coordinate: coordinate, imageName: "")
     }
     
     var subtitle: String? {
