@@ -19,6 +19,7 @@
 		A12EBB0D1D3A48C400EF81B0 /* Near Me Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A12EBB0C1D3A48C400EF81B0 /* Near Me Filled-50.png */; };
 		A12EBB0F1D3AB63000EF81B0 /* Circled User Female -50.png in Resources */ = {isa = PBXBuildFile; fileRef = A12EBB0E1D3AB63000EF81B0 /* Circled User Female -50.png */; };
 		A12EBB131D3ABA7D00EF81B0 /* MonsterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12EBB121D3ABA7D00EF81B0 /* MonsterTableViewCell.swift */; };
+		A12EBB281D3B0B8800EF81B0 /* AirshipConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = A12EBB271D3B0B8800EF81B0 /* AirshipConfig.plist */; };
 		A1728BEE1D3281920093541E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1728BED1D3281920093541E /* AppDelegate.swift */; };
 		A1728BF01D3281920093541E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1728BEF1D3281920093541E /* ViewController.swift */; };
 		A1728BF31D3281920093541E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1728BF11D3281920093541E /* Main.storyboard */; };
@@ -184,6 +185,9 @@
 		A1728D571D3430C70093541E /* 151.png in Resources */ = {isa = PBXBuildFile; fileRef = A1728D561D3430C70093541E /* 151.png */; };
 		A1728D591D3453970093541E /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1728D581D3453970093541E /* HelpViewController.swift */; };
 		A1728D971D39096E0093541E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1728D961D39096E0093541E /* Constants.swift */; };
+		A1E290551D3B315200E290A8 /* More Than Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A1E290541D3B315200E290A8 /* More Than Filled-50.png */; };
+		A1E290661D3C14B200E290A8 /* AirshipKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E290651D3C148D00E290A8 /* AirshipKit.framework */; };
+		A1E290671D3C14B200E290A8 /* AirshipKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A1E290651D3C148D00E290A8 /* AirshipKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B92656A0D47145F089E6F94F /* Pods_PokeFinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CE99C26BC4F9C3A1E741C3 /* Pods_PokeFinderTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -202,7 +206,35 @@
 			remoteGlobalIDString = A1728BE91D3281920093541E;
 			remoteInfo = PokeFinder;
 		};
+		A1E290641D3C148D00E290A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1E290601D3C148C00E290A8 /* AirshipKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 494DD9571B0EB677009C134E;
+			remoteInfo = AirshipKit;
+		};
+		A1E290681D3C14B200E290A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1E290601D3C148C00E290A8 /* AirshipKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 494DD9561B0EB677009C134E;
+			remoteInfo = AirshipKit;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A12EBB261D3B0B4B00EF81B0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A1E290671D3C14B200E290A8 /* AirshipKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		21B8FBC35A3C6FF92DCE931B /* Pods_PokeFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokeFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -221,6 +253,7 @@
 		A12EBB0C1D3A48C400EF81B0 /* Near Me Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Near Me Filled-50.png"; sourceTree = "<group>"; };
 		A12EBB0E1D3AB63000EF81B0 /* Circled User Female -50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Circled User Female -50.png"; sourceTree = "<group>"; };
 		A12EBB121D3ABA7D00EF81B0 /* MonsterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterTableViewCell.swift; sourceTree = "<group>"; };
+		A12EBB271D3B0B8800EF81B0 /* AirshipConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AirshipConfig.plist; sourceTree = "<group>"; };
 		A1728BEA1D3281920093541E /* PokeFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1728BED1D3281920093541E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1728BEF1D3281920093541E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -392,6 +425,10 @@
 		A1728D561D3430C70093541E /* 151.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 151.png; sourceTree = "<group>"; };
 		A1728D581D3453970093541E /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		A1728D961D39096E0093541E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A1E290541D3B315200E290A8 /* More Than Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "More Than Filled-50.png"; sourceTree = "<group>"; };
+		A1E2905C1D3C146C00E290A8 /* Airship */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Airship; sourceTree = "<group>"; };
+		A1E2905D1D3C146C00E290A8 /* AirshipKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AirshipKit; sourceTree = "<group>"; };
+		A1E290601D3C148C00E290A8 /* AirshipKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AirshipKit.xcodeproj; path = AirshipKit/AirshipKit.xcodeproj; sourceTree = "<group>"; };
 		AAFE3AF544A54B9E560296CC /* Pods-PokeFinderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokeFinderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PokeFinderTests/Pods-PokeFinderTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D787BF63A6565395261F6594 /* Pods-PokeFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokeFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PokeFinder/Pods-PokeFinder.debug.xcconfig"; sourceTree = "<group>"; };
 		D8F039050D513A8A0A5066C0 /* Pods-PokeFinderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokeFinderUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PokeFinderUITests/Pods-PokeFinderUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -402,6 +439,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1E290661D3C14B200E290A8 /* AirshipKit.framework in Frameworks */,
 				2F83B718C0B13EB4237846C7 /* Pods_PokeFinder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,6 +503,10 @@
 		A1728BE11D3281920093541E = {
 			isa = PBXGroup;
 			children = (
+				A1E290601D3C148C00E290A8 /* AirshipKit.xcodeproj */,
+				A1E2905C1D3C146C00E290A8 /* Airship */,
+				A1E2905D1D3C146C00E290A8 /* AirshipKit */,
+				A12EBB271D3B0B8800EF81B0 /* AirshipConfig.plist */,
 				A1728BEC1D3281920093541E /* PokeFinder */,
 				A1728C011D3281920093541E /* PokeFinderTests */,
 				A1728C0C1D3281920093541E /* PokeFinderUITests */,
@@ -530,6 +572,7 @@
 		A1728C291D34309B0093541E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A1E290541D3B315200E290A8 /* More Than Filled-50.png */,
 				A1728D561D3430C70093541E /* 151.png */,
 				A1728C2A1D3430C10093541E /* 1.png */,
 				A1728C2B1D3430C10093541E /* 2.png */,
@@ -685,6 +728,14 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		A1E290611D3C148C00E290A8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1E290651D3C148D00E290A8 /* AirshipKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -698,10 +749,12 @@
 				A1728BE81D3281920093541E /* Resources */,
 				87D54F58CBB13BA44CC9C024 /* [CP] Embed Pods Frameworks */,
 				E9FFF73AB491A38E305C0883 /* [CP] Copy Pods Resources */,
+				A12EBB261D3B0B4B00EF81B0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A1E290691D3C14B200E290A8 /* PBXTargetDependency */,
 			);
 			name = PokeFinder;
 			productName = PokeFinder;
@@ -762,6 +815,14 @@
 					A1728BE91D3281920093541E = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 6H67Z8XZ67;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					A1728BFD1D3281920093541E = {
 						CreatedOnToolsVersion = 7.3;
@@ -786,6 +847,12 @@
 			mainGroup = A1728BE11D3281920093541E;
 			productRefGroup = A1728BEB1D3281920093541E /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A1E290611D3C148C00E290A8 /* Products */;
+					ProjectRef = A1E290601D3C148C00E290A8 /* AirshipKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				A1728BE91D3281920093541E /* PokeFinder */,
@@ -794,6 +861,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A1E290651D3C148D00E290A8 /* AirshipKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AirshipKit.framework;
+			remoteRef = A1E290641D3C148D00E290A8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A1728BE81D3281920093541E /* Resources */ = {
@@ -838,6 +915,7 @@
 				A1728CDB1D3430C10093541E /* 28.png in Resources */,
 				A1728CD31D3430C10093541E /* 20.png in Resources */,
 				A1728CFA1D3430C10093541E /* 59.png in Resources */,
+				A1E290551D3B315200E290A8 /* More Than Filled-50.png in Resources */,
 				A12EBB031D3A461200EF81B0 /* Settings-50.png in Resources */,
 				A1728D401D3430C10093541E /* 129.png in Resources */,
 				A1728CC61D3430C10093541E /* 7.png in Resources */,
@@ -848,6 +926,7 @@
 				A1728D2F1D3430C10093541E /* 112.png in Resources */,
 				A1728CC11D3430C10093541E /* 2.png in Resources */,
 				A1728CE61D3430C10093541E /* 39.png in Resources */,
+				A12EBB281D3B0B8800EF81B0 /* AirshipConfig.plist in Resources */,
 				A1728D171D3430C10093541E /* 88.png in Resources */,
 				A1728D081D3430C10093541E /* 73.png in Resources */,
 				A1728D2D1D3430C10093541E /* 110.png in Resources */,
@@ -1152,6 +1231,11 @@
 			target = A1728BE91D3281920093541E /* PokeFinder */;
 			targetProxy = A1728C0A1D3281920093541E /* PBXContainerItemProxy */;
 		};
+		A1E290691D3C14B200E290A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AirshipKit;
+			targetProxy = A1E290681D3C14B200E290A8 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -1264,13 +1348,16 @@
 			baseConfigurationReference = D787BF63A6565395261F6594 /* Pods-PokeFinder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Andy Hadjigeorgiou (Z45E6ATMUS)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Andreas Hadjigeorgiou (6H67Z8XZ67)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = PokeFinder/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.AndyHadjigeorgiou.PokeFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9230d83f-42d8-4283-b1a0-948b6bc02826";
+				PROVISIONING_PROFILE = "e8ac8eb8-a678-485f-bee4-e51d163ae94a";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1280,13 +1367,16 @@
 			baseConfigurationReference = 8A0E9C8760E8B927DA6722A2 /* Pods-PokeFinder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Andy Hadjigeorgiou (Z45E6ATMUS)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Andreas Hadjigeorgiou (6H67Z8XZ67)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = PokeFinder/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.AndyHadjigeorgiou.PokeFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9230d83f-42d8-4283-b1a0-948b6bc02826";
+				PROVISIONING_PROFILE = "e8ac8eb8-a678-485f-bee4-e51d163ae94a";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

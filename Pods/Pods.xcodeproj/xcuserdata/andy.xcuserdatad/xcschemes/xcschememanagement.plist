@@ -9,11 +9,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>HanekeSwift.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-PokeFinder.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,27 +32,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2C2B1953A91633859BF7AD238FF567A0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>37E0DDCF071B15A97ED448CB56F1B6D2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4D350CB98E1DE8B405A7F61AFBD74D17</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>4E87142BD30CAAD93E7E2AE884589623</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7DC64B4BD2AEE0B9428D436003E3B025</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BB1A4982C85AFD69F7C57F0B42BC743F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

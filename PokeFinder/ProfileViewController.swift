@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Haneke
 import SwiftyJSON
 import Alamofire
 import MapKit
@@ -21,6 +20,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         // api
+        self.userScore.text = ""
+        self.userName.text = ""
         let prefs = NSUserDefaults.standardUserDefaults()
 
         if let name = prefs.stringForKey("name"){
@@ -37,10 +38,17 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     func getProfile() {
         Alamofire.request(.GET, "https://\(Constants.baseUrl).herokuapp.com/users/\(UIDevice.currentDevice().identifierForVendor!.UUIDString)", parameters: ["version": Constants.version])
             .response { request, response, data, error in
-                NSLog((data?.description)!)
                 var json = JSON(data: data!)
+                NSLog(json.description)
                 self.userName.text = json["user"]["name"].string
-                self.monsters = []
+                var totalVotes = json["totalVotes"].int!
+                self.userScore.text = String(totalVotes)
+                if totalVotes >= 0 {
+                    self.userScore.textColor = UIColor(red: 36.0/255, green: 164.0/255, blue: 83.0/255, alpha: 1.0)
+                } else {
+                    self.userScore.textColor = UIColor(red: 231.0/255, green: 43.0/255, blue: 30.0/255, alpha: 1.0)
+                }
+                var newMonsters = [Monster]()
                 for (key,subJson) in json["monsters"] {
                     //Do something you want
                     let monster = Monster(id: Int(String(subJson["id"]))!,title: subJson["name"].string!,
@@ -53,8 +61,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                         upVotes: Int(String(subJson["upVotes"]))!,
                         downVotes: Int(String(subJson["downVotes"]))!,
                         totalVotes: Int(String(subJson["totalVotes"]))!)
-                    self.monsters.append(monster)
+                    newMonsters.append(monster)
                 }
+                self.monsters = newMonsters
         }
         tableView.reloadData()
     }

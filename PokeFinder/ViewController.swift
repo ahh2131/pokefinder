@@ -65,27 +65,10 @@ class ViewController: UIViewController, ModalViewControllerDelegate, CLLocationM
     
     func searchMonster(name: String) {
         if (!name.isEmpty) {
-            Alamofire.request(.GET, "https://\(Constants.baseUrl).herokuapp.com/search/\(name)?lat=\(self.currentLocation.coordinate.latitude)&lng=\(self.currentLocation.coordinate.longitude)&recent=\(self.switchValue)&version=\(Constants.version)")
-                .response { request, response, data, error in
-                    self.searchedMonster = []
-                    var json = JSON(data: data!)
-                    for (key,subJson):(String, JSON) in json {
-                        //Do something you want
-                        let monster = Monster(id: Int(String(subJson["id"]))!,title: subJson["name"].string!,
-                            locationName: "",
-                            discipline: "",
-                            //coordinate: self.currentLocation.coordinate)
-                            coordinate: CLLocationCoordinate2DMake(Double(subJson["lat"].string!)!, Double(subJson["lng"].string!)!),
-                            imageName: String(subJson["number"])+".png",
-                            spotterName: subJson["spotterName"].string!,
-                            upVotes: Int(String(subJson["upVotes"]))!,
-                            downVotes: Int(String(subJson["downVotes"]))!,
-                            totalVotes: Int(String(subJson["totalVotes"]))!)
-                        self.searchedMonster.append(monster)
-                    }
-                    self.mapView.removeAnnotations(self.mapView.annotations)
-                    self.mapView.addAnnotations(self.searchedMonster)
-            }
+            self.searchedMonster = []
+            self.searchedMonster = self.Monsters.filter({$0.title == name})
+            self.mapView.removeAnnotations(self.mapView.annotations)
+            self.mapView.addAnnotations(self.searchedMonster)
         }
     }
     
@@ -220,11 +203,13 @@ class ViewController: UIViewController, ModalViewControllerDelegate, CLLocationM
     func sendSwitchValue(value: Bool, type: String) {
         if type == "recent" {
             self.switchValue = value
+
         } else {
             self.ratedSwitchValue = value
+
         }
-        
         getMonsters(true)
+        
     }
     
     @IBAction func addMonsterButton(sender: AnyObject) {

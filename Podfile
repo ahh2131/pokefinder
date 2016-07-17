@@ -6,7 +6,6 @@ target 'PokeFinder' do
   use_frameworks!
   pod 'Alamofire', '~> 3.4'
   pod 'SwiftyJSON'
-  pod 'HanekeSwift'
 
 
 
@@ -22,4 +21,12 @@ target 'PokeFinder' do
     # Pods for testing
   end
 
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['ENABLE_BITCODE'] = 'NO'
+    end
+  end
 end

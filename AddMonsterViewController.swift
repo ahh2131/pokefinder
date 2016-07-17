@@ -26,6 +26,7 @@ class AddMonsterViewController: UIViewController, UIPickerViewDelegate, UIPicker
     var monsterHeaderText: String!
     
     @IBAction func cancelAdd(sender: AnyObject) {
+        
         self.dismissViewControllerAnimated(true, completion: {});
     }
     
